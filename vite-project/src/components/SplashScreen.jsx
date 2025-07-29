@@ -1,11 +1,11 @@
-import React,{ useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Splash1 from '../assets/Splash1.png'
 import viteLogo from '../../public/vite.svg'
 // import './index'
 import '../App.css'
 
-function SplashScreen() {
-  const [count, setCount] = useState(0)
+
+  // const [count, setCount] = useState(0)
 
 
 
@@ -24,46 +24,61 @@ function SplashScreen() {
   }
 ];
 
-const SplashScreen = () => {
-  const [stepIndex, setStepIndex] = useState(0);
+
+const Interval = 2500; 
+
+function SplashScreen() {
+  const [quotesIndex, setQuotesIndex] = useState(0);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (quotesIndex < quotes.length - 1) {
+        setQuotesIndex(quotesIndex + 1);
+      } else {
+        console.log('Onboarding complete');
+      }
+    }, Interval);
+
+
+    return () => clearTimeout(timer);
+  }, [quotesIndex]);
 
   const handleNext = () => {
-    if (stepIndex < quotes.length - 1) {
-      setStepIndex(stepIndex + 1);
+    if (quotesIndex < quotes.length - 1) {
+      setQuotesIndex(quotesIndex + 1);
     }
-}
-}
+  };
+
+  const handleSkip = () => {
+    setQuotesIndex(quotes.length - 1);
+  };
+
   return (
-    <>
-      <div>
-        <div className='onboarding-container'>
-         <h1>Lawyer App</h1>   
-         <h3>Search for a lawyer</h3>
-            <div className='image-container'>
-                <a href="" target="_blank">
-                <img src={Splash1} className="illustration" alt="Search for a lawyer illustration" />
-                </a>
-            </div>
+    <div className="onboarding-container">
+      <div className="image-container">
+        <img src= {Splash1} alt="Illustration" className="illustration" />
       </div>
-    <div class="pagination-dots">
-   {/* {steps.map((_, index) => (
+
+      <div className="pagination-dots">
+        {quotes.map((_, index) => (
           <span
             key={index}
-            className={`dot ${index === stepIndex ? 'active' : ''}`}
+            className={`dot ${index === quotesIndex ? 'active' : ''}`}
           />
-        ))} */}
-    </div>
-        <p className='quotes'>Search for a lawyer, know more about his work experience and his area of practice.</p>
-        <button class="next-button">Next</button>
-        <a href="#" class="skip-link" >Skip</a>
-    </div>
+        ))}
+      </div>
 
-    <script>
+      <h2>{quotes[quotesIndex].title}</h2>
+      <p>{quotes[quotesIndex].description}</p>
 
-    </script>
-    </>
-  )
-}
+      <button className="next-button" onClick={handleNext}>
+        {quotesIndex < quotes.length - 1 ? 'Next' : 'Done'}
+      </button>
+      <button className="skip-link" onClick={handleSkip}>Skip</button>
+    </div>
+  );
+};
         // <button onClick={() => setCount((count) => count + 1)}>
         //   count is {count}
 export default SplashScreen
