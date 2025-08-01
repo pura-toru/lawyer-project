@@ -1,8 +1,12 @@
 const Home= () => {
   return (
-    <header>
-      <h1>Home</h1>
-    </header>
+    <div className="scroll-container">
+      {[...Array(10)].map((_, i) => (
+        <div className="scroll-item" key={i}>
+          Item {i + 1}
+        </div>
+      ))}
+    </div>
   );
 };
 
