@@ -6,7 +6,7 @@ import './App.css';
 // Drl lu ganti yg welcome tinggal sesuain aja kaya yg bawah(import, Route path)
 // import Welcome from "./components/Lawyer.jsx"
 import Home from "./components/Home.jsx"
-import Lawyer from "./components/Lawyer.jsx"
+import Splash from "./components/SplashScreen.jsx"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,8 +22,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/lawyer" element={<Lawyer />} />
+        <Route path="/" element={<Splash />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </>
   );
