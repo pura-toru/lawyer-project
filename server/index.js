@@ -1,16 +1,21 @@
 const express = require('express');
-const cors = require('cors');
-
+const pool = require('./db.js');
 const app = express();
-const PORT = 6969;
 
-app.use(cors());
 app.use(express.json());
 
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello from server!' });
+app.get('/lawyers', async (req, res) => {
+  try {
+    const connection = await pool.getConnection();
+    const lawyers = await connection.query('SELECT * FROM lawyers');
+    console.log(lawyers);
+    res.json(lawyers);
+  } catch(err) {
+      console.error(err);
+      res.status(500).send({ message: 'Error fetching lawyers'});
+  }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+app.listen(3000, () => {
+  console.log('Server listening')
+})
