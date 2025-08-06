@@ -5,12 +5,12 @@ const Home= () => {
   return (
     <div className="home-container">
       <header className="header">
-        <h1>LawyerUp</h1>
+        <h1>Peler Up</h1>
         <input type="text" placeholder="Search for lawyers" className="search-bar" />
       </header>
       
       <section className="free-consultation">
-        <h2>Free consultation</h2>
+        <h2>Top consultation</h2>
         <div className="lawyer-cards">
           <div className="lawyer-card">
             <img src="../../public/images/TemporaryPicture.jpg" alt="Lawyer" />

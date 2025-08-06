@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 
 // Components
 // Drl lu ganti yg welcome tinggal sesuain aja kaya yg bawah(import, Route path)

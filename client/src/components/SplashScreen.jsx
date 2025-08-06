@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Splash1 from '../assets/Splash1.png'
 import viteLogo from '../../public/vite.svg'
 // import './index'
-import '../App.css'
+import '../../public/styles/SplashScreen.css'
 
 
   // const [count, setCount] = useState(0)

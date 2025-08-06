@@ -9,7 +9,7 @@ import Home from './components/Home.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <SplashScreen />
+      <App />
         {/* <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} / */}
     </BrowserRouter>
