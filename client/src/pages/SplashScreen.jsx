@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Splash1 from '../assets/Splash1.png'
-import viteLogo from '../../public/vite.svg'
-// import './index'
-import '../../public/styles/SplashScreen.css'
+import Splash1 from '../assets/Splash1.png';
+import viteLogo from '../../public/vite.svg';
+import '../../public/styles/SplashScreen.css';
+import '../styles/SplashScreen.css'
 
-
-  // const [count, setCount] = useState(0)
-
-
-
-  const quotes = [
+// const [count, setCount] = useState(0)
+const quotes = [
   {
     title: "Search for a lawyer",
     description: "Search for a lawyer, know more about his work experience and his area of practice."
@@ -24,12 +20,10 @@ import '../../public/styles/SplashScreen.css'
   }
 ];
 
-
 const Interval = 2500; 
 
 function SplashScreen() {
   const [quotesIndex, setQuotesIndex] = useState(0);
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -39,7 +33,6 @@ function SplashScreen() {
         console.log('Onboarding complete');
       }
     }, Interval);
-
 
     return () => clearTimeout(timer);
   }, [quotesIndex]);
@@ -81,4 +74,4 @@ function SplashScreen() {
 };
         // <button onClick={() => setCount((count) => count + 1)}>
         //   count is {count}
-export default SplashScreen
+export default SplashScreen;
