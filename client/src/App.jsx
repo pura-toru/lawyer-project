@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-
-// Components
-// Drl lu ganti yg welcome tinggal sesuain aja kaya yg bawah(import, Route path)
-// import Welcome from "./components/Lawyer.jsx"
-import Home from "./components/Home.jsx"
-import Lawyer from "./components/Lawyer.jsx"
+import Home from "./pages/Home.jsx"
+import Lawyer from "./pages/Lawyer.jsx"
 
 function App() {
   const [count, setCount] = useState(0);
