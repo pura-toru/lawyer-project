@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Splash1 from '../assets/Splash1.png';
-import viteLogo from '../../public/vite.svg';
-import '../../public/styles/SplashScreen.css';
+import '../App.css'
 import '../styles/SplashScreen.css'
 
 // const [count, setCount] = useState(0)
@@ -20,7 +19,7 @@ const quotes = [
   }
 ];
 
-const Interval = 2500; 
+const Interval = 5000; 
 
 function SplashScreen() {
   const [quotesIndex, setQuotesIndex] = useState(0);
