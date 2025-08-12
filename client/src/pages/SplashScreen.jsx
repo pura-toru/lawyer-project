@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Splash1 from '../assets/Splash1.png';
+import Splash1 from '../../public/images/Splash1.png';
 import '../styles/SplashScreen.css';
 
 // const [count, setCount] = useState(0)
