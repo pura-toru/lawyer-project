@@ -1,0 +1,5 @@
+.LawyerBox img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Kata GPT buat bantu maintain aspect ration & crop */
+}
