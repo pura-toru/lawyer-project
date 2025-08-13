@@ -17,7 +17,7 @@ const Home= () => {
             <div className="lawyer-info">
               <h3>Rako</h3>
               <p>Family lawyer - Tax lawyer</p>
-              <p className="rating">4.7</p>
+              <p className="rating">Rating</p>
               <p className="free-text">Free</p>
             </div>
           </div>
@@ -26,7 +26,7 @@ const Home= () => {
             <div className="lawyer-info">
               <h3>Surenco</h3>
               <p>Criminal lawyer - Tax lawyer</p>
-              <p className="rating">4.8</p>
+              <p className="rating">Rating</p>
               <p className="free-text">Free</p>
             </div>
           </div>

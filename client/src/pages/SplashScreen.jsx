@@ -46,6 +46,7 @@ function SplashScreen() {
   };
 
   return (
+    <div className='landing-page-body'>
     <div className="onboarding-container">
       <div className="image-container">
         <img src= {Splash1} alt="Illustration" className="illustration" />
@@ -67,6 +68,7 @@ function SplashScreen() {
         {quotesIndex < quotes.length - 1 ? 'Next' : 'Done'}
       </button>
       <button className="skip-link" onClick={handleSkip}>Skip</button>
+    </div>
     </div>
   );
 };

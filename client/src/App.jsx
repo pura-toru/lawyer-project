@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import './App.css';
 import Home from "./pages/Home.jsx"
 import Lawyer from "./pages/Lawyer.jsx"
 import Splash from "./pages/SplashScreen.jsx"
