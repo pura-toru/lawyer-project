@@ -21,7 +21,7 @@ const quotes = [
 
 const Interval = 5000; 
 
-function SplashScreen() {
+const SplashScreen = () => {
   const [quotesIndex, setQuotesIndex] = useState(0);
 
   useEffect(() => {
@@ -47,27 +47,26 @@ function SplashScreen() {
   };
 
   return (
-    <div className="onboarding-container">
-      <div className="image-container">
-        <img src= {Splash1} alt="Illustration" className="illustration" />
+    <div className="splash-screen">
+      <div className="onboarding-container">
+        <div className="image-container">
+          <img src= {Splash1} alt="Illustration" className="illustration" />
+        </div>
+        <div className="pagination-dots">
+          {quotes.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === quotesIndex ? 'active' : ''}`}
+            />
+          ))}
+        </div>
+        <h2>{quotes[quotesIndex].title}</h2>
+        <p>{quotes[quotesIndex].description}</p>
+        <button className="next-button" onClick={handleNext}>
+          {quotesIndex < quotes.length - 1 ? 'Next' : 'Done'}
+        </button>
+        <button className="skip-link" onClick={handleSkip}>Skip</button>
       </div>
-
-      <div className="pagination-dots">
-        {quotes.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === quotesIndex ? 'active' : ''}`}
-          />
-        ))}
-      </div>
-
-      <h2>{quotes[quotesIndex].title}</h2>
-      <p>{quotes[quotesIndex].description}</p>
-
-      <button className="next-button" onClick={handleNext}>
-        {quotesIndex < quotes.length - 1 ? 'Next' : 'Done'}
-      </button>
-      <button className="skip-link" onClick={handleSkip}>Skip</button>
     </div>
   );
 };
