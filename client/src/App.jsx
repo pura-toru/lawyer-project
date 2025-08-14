@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Header from "./components/Header.jsx"
 import Home from "./pages/Home.jsx"
 import Register from "./pages/Register.jsx"
 import Splash from "./pages/SplashScreen.jsx"
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <Routes>
         <Route path="/" element={<Splash />} />
         <Route path="/register" element={<Register />} />
