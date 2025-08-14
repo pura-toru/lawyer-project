@@ -1,9 +1,14 @@
-#root {
-  /* max-width: 1280px; */
+/* #root { */
+/*   /* max-width: 1280px; */ */
+/*   margin: 0; */
+/*   padding: 0; */
+/*   /* Ini yg buat semuanya ke center */ */
+/*   /* text-align: center; */ */
+/* } */
+body {
   margin: 0;
-  padding: 0;
-  /* Ini yg buat semuanya ke center */
-  /* text-align: center; */
+  background-color: #fffdf8;
+  color: var(--onyx);
 }
 
 button {
