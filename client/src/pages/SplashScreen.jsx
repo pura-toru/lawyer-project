@@ -25,6 +25,7 @@ function SplashScreen() {
   const [quotesIndex, setQuotesIndex] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
 
+  // timer buat auto pagination dots
   useEffect(() => {
     const timer = setTimeout(() => {
       if (quotesIndex < quotes.length - 1) {
@@ -36,6 +37,7 @@ function SplashScreen() {
 
     return () => clearTimeout(timer);
   }, [quotesIndex]);
+  
 
   const handleNext = () => {
     if (quotesIndex < quotes.length - 1) {
