@@ -11,7 +11,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Splash />} />
-        <Route path="/home" element={<Home />} />
+        {/* <Route path="*" element={<NoPage />} /> */}
+        { <Route path="/home" /*index*/ element={<Home />} /> }
         <Route path="/lawyer" element={<Lawyer />} />
       </Routes>
     </>

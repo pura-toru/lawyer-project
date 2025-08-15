@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Splash1 from '../../public/images/Splash1.png';
 import '../styles/SplashScreen.css';
+import { Link } from 'react-router-dom';
 
 // const [count, setCount] = useState(0)
 const quotes = [
@@ -22,6 +23,7 @@ const Interval = 2500;
 
 function SplashScreen() {
   const [quotesIndex, setQuotesIndex] = useState(0);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -53,6 +55,7 @@ function SplashScreen() {
       </div>
 
       <div className="pagination-dots">
+        {/* .mapp restructured array, masih belum paham gunanya key*/}
         {quotes.map((_, index) => (
           <span
             key={index}
@@ -62,16 +65,19 @@ function SplashScreen() {
       </div>
 
       <h2>{quotes[quotesIndex].title}</h2>
-      <p>{quotes[quotesIndex].description}</p>
+      <p className='quotes'>{quotes[quotesIndex].description}</p>
 
-      <button className="next-button" onClick={handleNext}>
-        {quotesIndex < quotes.length - 1 ? 'Next' : 'Done'}
+         <button className= {quotesIndex < quotes.length - 1 ? 'next-button' : 'hidden'} onClick={handleNext}>
+          Next
+        {/* {quotesIndex < quotes.length - 1 ? '' : 'Done'} */}
+        {/* ubah inner html klo udh di akhir array */}
       </button>
-      <button className="skip-link" onClick={handleSkip}>Skip</button>
+   <Link to="/home"><button className="skip-link" onClick={handleSkip}>Skip</button></Link>
     </div>
     </div>
   );
 };
         // <button onClick={() => setCount((count) => count + 1)}>
         //   count is {count}
+        // buat count/click. Currently unused
 export default SplashScreen;
