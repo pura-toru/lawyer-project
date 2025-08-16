@@ -1,34 +1,31 @@
 :root{
   --SecondaryColor: #333;
-  text-align: center;
-  
+  /*text-align: center;*/
 }
 
-
 .home-container {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; Ini declare aja di App.css biar global*/
   color: #333;
   background-color: #f5f5f5;
   padding: 20px;
   height: 100%;
 }
 
-.header {
-  /* z-index: 99;
-  position: sticky; */
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
-  background-color: #3C8DAD;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 8px;
-}
+/* .header { */
+/*   /* z-index: 99; */
+/*   position: sticky; */ */
+/*   display: flex; */
+/*   justify-content: space-between; */
+/*   align-items:center; */
+/*   background-color: #3C8DAD; */
+/*   padding: 10px 20px; */
+/*   color: white; */
+/*   border-radius: 8px; */
+/* } */
 
-.header h1 {
-  margin: 0;
-  
-}
+/* .header h1 { */
+/*   margin: 0; */
+/* } */
 
 .search-bar {
   padding: 10px;
@@ -170,11 +167,6 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
-
-
-
-
 
 /* .scroll-container {
   display: flex;

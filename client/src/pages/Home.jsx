@@ -1,10 +1,10 @@
 import React from "react";
 import '../styles/Home.css'
 
-const Home= () => {
+const Home = () => {
   return (
     <div className="home-container">
-      <header className="header">
+      <header className="search-bar">
         <h1>Peler Up</h1>
         <input type="search" placeholder="Search for lawyers" className="search-bar" />
       </header>

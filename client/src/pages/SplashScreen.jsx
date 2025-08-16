@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Splash1 from '../../public/images/Splash1.png';
 import '../styles/SplashScreen.css';
 import { Link } from 'react-router-dom';
+import '../App.css'
 
 // const [count, setCount] = useState(0)
 const quotes = [
@@ -19,9 +20,9 @@ const quotes = [
   }
 ];
 
-const Interval = 2500; 
+const Interval = 5000; 
 
-function SplashScreen() {
+const SplashScreen = () => {
   const [quotesIndex, setQuotesIndex] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
 
@@ -74,7 +75,7 @@ function SplashScreen() {
         {/* {quotesIndex < quotes.length - 1 ? '' : 'Done'} */}
         {/* ubah inner html klo udh di akhir array */}
       </button>
-   <Link to="/home"><button className="skip-link" onClick={handleSkip}>Skip</button></Link>
+      <Link to="/home"><button className="skip-link" onClick={handleSkip}>Skip</button></Link>
     </div>
     </div>
   );

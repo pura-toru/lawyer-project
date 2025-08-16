@@ -1,0 +1,21 @@
+:root {
+  --blue: #1446A0;
+  --beige: #EBEBD3;
+  --onyx: #3C3C3B;
+}
+
+.header {
+  margin: 0;
+  color: var(--onyx);
+  display: grid;
+  padding: 1rem 2rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  flex-direction: row;
+
+  /* Optional: sticky header */
+  position: sticky;
+  top: 0;
+  z-index: 10; 
+}
