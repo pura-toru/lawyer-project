@@ -2,12 +2,15 @@ import React from "react";
 import '../styles/Home.css'
 
 const Home = () => {
+
+  //Header lu gw rename soalny udah ada header, header lu bikin aja kyk search
+  
   return (
     <div className="home-container">
-      <header className="search-bar">
+      <div className="search-bar">
         <h1>Peler Up</h1>
         <input type="search" placeholder="Search for lawyers" className="search-bar" />
-      </header>
+      </div>
       
       <section className="free-consultation">
         <h2>Top consultation</h2>
