@@ -7,10 +7,10 @@ const Home = () => {
   
   return (
     <div className="home-container">
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <h1>Peler Up</h1>
         <input type="search" placeholder="Search for lawyers" className="search-bar" />
-      </div>
+      </div> */}
       
       <section className="free-consultation">
         <h2>Top consultation</h2>
@@ -54,16 +54,7 @@ const Home = () => {
       </section>
       
       <div className="free-space">
-      <section className="chat-section">
-        <h3>Chat with experts</h3>
-        <ul>
-          <li>Access to Expertise</li>
-          <li>Convenient</li>
-          <li>Time-Saving</li>
-          <li>Confidential</li>
-        </ul>
-        <button className="chat-btn">Chat now</button>
-      </section>
+
       </div>
       <section className="steps-section">
         <h3>Steps to book an appointment</h3>
@@ -72,9 +63,9 @@ const Home = () => {
         <p>3. Discuss your case with the lawyer.</p>
       </section>
 
-      <footer className="footer">
+      {/* <footer className="footer">
         <button className="footer-btn">All lawyers</button>
-      </footer>
+      </footer> */}
     </div>
   );
 };

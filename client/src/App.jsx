@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect} from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header.jsx"
+import Footer from './components/Footer.jsx';
 import Home from "./pages/Home.jsx"
 import Register from "./pages/Register.jsx"
 import Splash from "./pages/SplashScreen.jsx"
@@ -11,11 +12,15 @@ import Test from "./pages/TestBackend.jsx" //Ini page buat test backend, gw udh 
 
 function App() {
   const [count, setCount] = useState(0);
+  const location = useLocation();
+  const pageWithHeaderFooter = ['/home', '/lawyer']
+  const showHeader = pageWithHeaderFooter.includes(location.pathname);
   /* Header gw taro diluar <Routes> biar nongol di tiap page, kykny bisa di set biar nongol di page tertentu tp gw blm research */
   return (
     <>
-      <Header /> 
+      {showHeader && <Header />} 
       <Routes>
+
         <Route path="/" element={<Splash />} />
         {/* <Route path="*" element={<NoPage />} /> */}
         <Route path="/register" element={<Register />} />
@@ -24,6 +29,8 @@ function App() {
         <Route path="/lawyer/create" element={<CreateLawyer />} />
         <Route path="/test" element={<Test />} />
       </Routes>
+
+      {showHeader && <Footer />}
     </>
   );
 }
