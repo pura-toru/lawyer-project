@@ -18,6 +18,7 @@ const Lawyer= () => {
 /* 
 action search mungkin buat hubungin query nanti belom pasti jadi gw komen
 ref: https://react.dev/reference/react-dom/components/form */
+
   return (
     <>
       <div className="SearchBar">
@@ -27,7 +28,7 @@ ref: https://react.dev/reference/react-dom/components/form */
           <button type="submit">Search</button>
         </form>
       </div>
-      <div className="Main">
+      <div className="Main">        
         {lawyers.map((lawyer) => {
           return (
             <div className="LawyerBox">
@@ -45,5 +46,4 @@ ref: https://react.dev/reference/react-dom/components/form */
     </>
   );
 };
-
 export default Lawyer;

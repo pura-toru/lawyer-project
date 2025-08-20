@@ -1,0 +1,16 @@
+body {
+ background-color: white;
+ color: black;
+}
+
+.lawyer-form {
+  display: flex;
+  background-color: transparent;
+  flex-direction: row;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
