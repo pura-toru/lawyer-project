@@ -1,5 +1,43 @@
-.LawyerBox img {
+:root {
+  --blue: #1446A0;
+  --beige: #EBEBD3;
+  --onyx: #3C3C3B;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.lawyer-container {
+  display: flex;
+  border: 1px solid black;
+  padding: 10px;
+  width: 50em;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 1em;
+  box-shadow: 5px 5px black;
+}
+
+.lawyer-container:hover {
+  box-shadow: none;
+  background-color: rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s;
+}
+
+.lawyer-container img {
   width: 100px;
   height: 100px;
   object-fit: cover; /* Kata GPT buat bantu maintain aspect ration & crop */
+  border-radius: 1em;
+  border: 5px solid var(--blue);
+}
+
+.lawyer-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
 }
