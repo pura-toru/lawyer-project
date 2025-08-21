@@ -20,7 +20,6 @@ function App() {
     <>
       {showHeader && <Header />} 
       <Routes>
-
         <Route path="/" element={<Splash />} />
         {/* <Route path="*" element={<NoPage />} /> */}
         <Route path="/register" element={<Register />} />
@@ -29,7 +28,6 @@ function App() {
         <Route path="/lawyer/create" element={<CreateLawyer />} />
         <Route path="/test" element={<Test />} />
       </Routes>
-
       {showHeader && <Footer />}
     </>
   );
