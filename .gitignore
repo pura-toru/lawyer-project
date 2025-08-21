@@ -1,5 +1,10 @@
 .env
 .vite
-server/__pycache__
+.venv/
+*.pyc
+__pycache__/
+instance/
+.pytest_cache/
+.coverage
 client/node_modules
 server/node_modules
