@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Splash1 from '../../public/images/Splash1.png';
-import '../styles/SplashScreen.css';
 import { Link } from 'react-router-dom';
 import '../App.css'
+import '../styles/SplashScreen.css';
+import Splash1 from '../../public/images/Splash1.png';
 
 // const [count, setCount] = useState(0)
 const quotes = [
