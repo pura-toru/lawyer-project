@@ -30,9 +30,12 @@ def create_app(test_config=None):
         pass
 
     @app.route('/lawyers', methods=['GET'])
-    def get_lawyer():
+    def get_lawyers():
         result = db.get_lawyers()
         return jsonify(result)
+
+    @app.rotue('/lawyers/post', methods=['POST'])
+
 
     db.init_app(app)
 

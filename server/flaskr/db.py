@@ -25,6 +25,9 @@ def get_lawyers():
     result = cursor.fetchall()
     return result
 
+def post_lawyers():
+    conn = get_db()
+
 def close_db(e=None):
     db = g.pop('db', None)
 
