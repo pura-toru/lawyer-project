@@ -1,16 +1,22 @@
-body {
- background-color: white;
- color: black;
+:root {
+  --blue: #1446A0;
+  --beige: #EBEBD3;
+  --onyx: #3C3C3B;
 }
 
-.lawyer-form {
+.form-container{
+  border: 1px solid red;
+}
+
+.form-container form{
   display: flex;
-  background-color: transparent;
-  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
-button {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
+button{
+  background-color: var(--blue);
+  color: var(--beige);
 }
