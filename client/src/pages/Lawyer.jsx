@@ -42,7 +42,9 @@ Kasih filter buat sort gitu di search container
                 <p>{lawyer.Location}</p>
                 {/* Function buat cut string biography */}
                 <p>{lawyer.Biography.substring(0, 100)}</p>
+                <button className='lawyerpopup-button'>
                 {<LawyerPopup />}
+                </button>
               </div>
             </div>
           );

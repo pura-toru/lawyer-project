@@ -6,6 +6,7 @@
 /*   /* text-align: center; */ */
 /* } */
 body {
+  width: 0;
   margin: 0;
   padding: 0;
   background-color: #fffdf8;
@@ -24,9 +25,9 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  /* border-color: #646cff; */
-  transition: 0.2s ease;
-  transform: scale(1.2);
+  transition: 200ms ease;
+  transform: translateY(5px) translateZ(0px);
+  transition: all (600ms - 200);
 }
 /* button:focus,
 button:focus-visible {

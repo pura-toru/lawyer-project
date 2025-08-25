@@ -6,6 +6,7 @@
 
 .header {
   margin: 0;
+  /* width: 100%; */
   color: var(--beige);
   background-color: var(--blue);
   display: flex;

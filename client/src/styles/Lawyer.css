@@ -4,8 +4,13 @@
   --onyx: #3C3C3B;
 }
 
+/* .lawyerpopup-button{
+
+} */
+
 .main-container {
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   gap: 1em;

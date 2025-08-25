@@ -70,12 +70,14 @@ const SplashScreen = () => {
       <h2>{quotes[quotesIndex].title}</h2>
       <p className='quotes'>{quotes[quotesIndex].description}</p>
 
-         <button className= {quotesIndex < quotes.length - 1 ? 'next-button' : 'hidden'} onClick={handleNext}>
+         <button className= {quotesIndex < quotes.length - 1 ? 'splash-button' : 'hidden'} onClick={handleNext}>
           Next
         {/* {quotesIndex < quotes.length - 1 ? '' : 'Done'} */}
         {/* ubah inner html klo udh di akhir array */}
       </button>
-      <Link to="/home"><button className="skip-link" onClick={handleSkip}>Skip</button></Link>
+      <Link to="/home">
+      <button className="splash-button" onClick={handleSkip}>Skip</button>
+      </Link>
     </div>
     </div>
   );

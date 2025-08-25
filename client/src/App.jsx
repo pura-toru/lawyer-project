@@ -13,7 +13,7 @@ import Test from "./pages/TestBackend.jsx" //Ini page buat test backend, gw udh 
 function App() {
   const [count, setCount] = useState(0);
   const location = useLocation();
-  const pageWithHeaderFooter = ['/home', '/lawyer']
+  const pageWithHeaderFooter = ['/home', '/lawyer','/lawyer/create' ,'/register']
   const showHeader = pageWithHeaderFooter.includes(location.pathname);
   /* Header gw taro diluar <Routes> biar nongol di tiap page, kykny bisa di set biar nongol di page tertentu tp gw blm research */
   return (
