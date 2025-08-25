@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 import '../styles/Home.css'
+import { Link } from "react-router-dom";
 
 const Home = () => {
-
   //Header lu gw rename soalny udah ada header, header lu bikin aja kyk search
-  
   return (
     <div className="home-container">
       {/* <div className="search-bar">
@@ -43,7 +42,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <button className="view-all-btn">View all</button>
+        <Link to='/lawyers'>
+          <button className="view-all-btn">View all</button>
+        </Link>
       </section>
       
       <section className="service-categories">

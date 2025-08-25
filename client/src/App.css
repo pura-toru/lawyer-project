@@ -6,6 +6,7 @@
 /*   /* text-align: center; */ */
 /* } */
 body {
+  width: 0;
   margin: 0;
   padding: 0;
   background-color: #fffdf8;
@@ -13,7 +14,7 @@ body {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -23,12 +24,13 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   transition: 200ms ease;
   transform: translateY(5px) translateZ(0px);
   transition: all (600ms - 200);
-
 }
+
 /* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

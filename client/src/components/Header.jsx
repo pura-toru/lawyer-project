@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../App.css'
 import '../styles/Footer.css'
 
@@ -8,7 +9,14 @@ const Header = () => {
         <img src="../../public/images/logo1.png"/>
         <p>JURISTIQ</p>
       </div> 
-      <div className='buttons'>  
+      <nav className="nav-bar">
+        <button>
+        <Link to='/consultations'>Consultations</Link>
+        </button>
+        <button><Link to='/blogs'>Blogs</Link></button>
+        <button><Link to='/blogs'>Blogs</Link></button>
+      </nav>
+      <div className='register-container'>  
         <button>Sign Up</button>
         <button>Sign In</button>
       </div> 

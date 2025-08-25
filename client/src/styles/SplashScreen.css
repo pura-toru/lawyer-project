@@ -77,7 +77,7 @@ h1 h2 h3{
 .splash-button {
   background-color: #90B7E8;
   text-shadow: 0 2px 0 #3B5D86;
-  box-shadow: 0 5px 0 #3B5D86;
+  box-shadow: 0 5px 3px #3B5D86;
   border-radius: 7px;
   color: #FFFFFF;
   font-size: 14px;
@@ -90,11 +90,10 @@ h1 h2 h3{
   transform: translateY(0px) translateZ(0px);
 }
 
-.splash-button:hover{
+.splash-button:hover {
   background-color:#3b5d86;
   box-shadow: none;
 }
-
 /*  
 @media (prefers-color-scheme: light) {
   :root {

@@ -1,4 +1,10 @@
-server/.env
-server/__pycache__
+.env
+.vite
+.venv/
+*.pyc
+__pycache__/
+instance/
+.pytest_cache/
+.coverage
 client/node_modules
 server/node_modules
