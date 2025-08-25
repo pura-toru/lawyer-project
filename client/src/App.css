@@ -24,11 +24,13 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   transition: 200ms ease;
   transform: translateY(5px) translateZ(0px);
   transition: all (600ms - 200);
 }
+
 /* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
