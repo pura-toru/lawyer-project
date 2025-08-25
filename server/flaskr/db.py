@@ -18,12 +18,21 @@ def connect_db():
     return g.db
 
 
-def get_lawyers():
+def get_lawyers(lawyerid=None):
     conn = connect_db()
-    # Without dictionary column name won't show
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM lawyers")
+
+    get_query = "SELECT * FROM lawyers"
+    params = []
+
+    if lawyerid:
+        get_query += " WHERE lawyer_id = ?"
+        params.append(lawyerid)
+
+    cursor.execute(get_query, params)
+
     result = cursor.fetchall()
+    cursor.close()
     return result
 
 def post_lawyers():
@@ -34,6 +43,7 @@ def post_lawyers():
     location = data.get('location')
     biography = data.get('biography')
     experience = data.get('experience')
+
     insertQuery = f"INSERT INTO lawyers (first_name, last_name, date_of_birth, location, biography, experience) VALUES ('{first_name}', '{last_name}', '{date_of_birth}', '{location}', '{biography}', '{experience}');"
 
     conn = connect_db()

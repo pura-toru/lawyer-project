@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from . import db
 from dotenv import load_dotenv
@@ -32,7 +32,8 @@ def create_app(test_config=None):
 
     @app.route('/lawyers', methods=['GET'])
     def get_lawyers():
-        result = db.get_lawyers()
+        lawyerid = request.args.get('lawyerid')
+        result = db.get_lawyers(lawyerid)
         return jsonify(result)
 
     @app.route('/lawyers/post', methods=['POST'])
