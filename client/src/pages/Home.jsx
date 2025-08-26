@@ -6,10 +6,6 @@ const Home = () => {
   //Header lu gw rename soalny udah ada header, header lu bikin aja kyk search
   return (
     <div className="home-container">
-      {/* <div className="search-bar">
-        <h1>Peler Up</h1>
-        <input type="search" placeholder="Search for lawyers" className="search-bar" />
-      </div> */}
       
       <section className="free-consultation">
         <h2>Top consultation</h2>
@@ -48,6 +44,10 @@ const Home = () => {
       </section>
       
       <section className="service-categories">
+        <div className='category-title'>
+          <h2>Categories</h2> 
+          <p>This is description btw</p><br/>
+        </div>
         <button className="category-btn">Divorce lawyers</button>
         <button className="category-btn">Family lawyers</button>
         <button className="category-btn">Criminal lawyers</button>

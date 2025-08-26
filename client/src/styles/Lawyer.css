@@ -15,11 +15,6 @@
   /* box-shadow:inset 10px 0px 5px var(--blue); */
 }
 
-.main-container::before{
-  background-size: cover;
-  background-image: url(../../public/images/background8.jpg);
-}
-
 .search-container{
   position:sticky;
   top: 0;
@@ -33,10 +28,6 @@
   color: rgb(255, 255, 255);  
 }
 
-.search-container::after {
-  background-color: #1446A0;
-}
-
 .search-container button{
   margin: 10px;
 }
@@ -48,12 +39,17 @@
   box-shadow: 0px 5px 5px #3B5D86;
 }
 
+.placeholder{
+  border: 3px dotted var(--onyx);
+  padding: 5px;
+}
+
 .lawyer-container {
   max-height: 12em;
   background-color:rgba(100, 148, 237, 0.103);
   display: flex;
-  border: 3px dotted var(--onyx);
-  margin-top: 10px;
+  /* border: 3px dotted var(--onyx); */
+  /* margin-top: 10px; */
   padding: 15px;
   width: 60em;
   gap: 5px;
@@ -63,9 +59,7 @@
 .lawyer-container h2{
   background-color: white;
   border: double;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  max-width:max-content;
   font-size: larger;
   padding: 5px;
 }
