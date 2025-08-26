@@ -14,7 +14,7 @@ const CreateLawyer= () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try{
-        const res = await fetch('http://localhost:3000/lawyers/post', {
+        const res = await fetch('http://localhost:3000/lawyers', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -53,13 +53,13 @@ const CreateLawyer= () => {
           <input
             value={formData.first_name}
             onChange={(e) => setFormData({ ...formData, first_name: e.target.value})}
-            type="text" maxlength="20" placeholder="First Name" required/>
+            type="text" maxLength="20" placeholder="First Name" required/>
 
           <label>Last Name</label>
           <input
             value={formData.last_name}
             onChange={(e) => setFormData({ ...formData, last_name: e.target.value})}
-            type="text" maxlength="20" placeholder="Last Name" required/>
+            type="text" maxLength="20" placeholder="Last Name" required/>
 
           <label>Date of Birth:</label>
           <input 

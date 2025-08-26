@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { getLawyers } = require('../controllers/lawyerController.js') 
+const controller = require('../controllers/lawyerController.js') 
 
-router.get('/', getLawyers);
+router.get('/', controller.getLawyers);
+router.get('/:id', controller.getLawyerById);
+router.post('/', controller.createLawyer);
 
 module.exports = router;
