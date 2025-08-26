@@ -7,6 +7,7 @@
 /* } */
 body {
   margin: 0;
+  padding: 0;
   background-color: #fffdf8;
   color: var(--onyx);
 }
@@ -22,10 +23,12 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
+/* button:hover { */
+/*   /* border-color: #646cff; */ */
+/*   transition: 0.2s ease; */
+/*   transform: scale(1.2); */
+/* } */
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */

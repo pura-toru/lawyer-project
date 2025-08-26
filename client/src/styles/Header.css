@@ -6,16 +6,37 @@
 
 .header {
   margin: 0;
-  color: var(--onyx);
-  display: grid;
-  padding: 1rem 2rem;
-  background-color: #f5f5f5;
+  color: var(--beige);
+  background-color: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 10px 20px;
   border-bottom: 1px solid #ddd;
-  text-align: center;
-  flex-direction: row;
-
   /* Optional: sticky header */
-  position: sticky;
-  top: 0;
-  z-index: 10; 
+  /* position: sticky; */
+  /* top: 0; */
+  /* z-index: 10;  */
 }
+
+.buttons{
+ display: flex;
+ gap: 10px;
+}
+
+/* .buttons button{
+  padding: 8px 16px;
+} */
+
+.logo{
+  text-align: center;
+  background-color: white;
+  border-radius: 10%;
+  color: #1445a2;
+  padding: 3px;
+}
+
+.logo img{
+  height: 40px;
+  width: 40px;
+  }
