@@ -10,11 +10,9 @@ const Header = () => {
         <p>JURISTIQ</p>
       </div> 
       <nav className="nav-bar">
-        <button>
-        <Link to='/consultations'>Consultations</Link>
-        </button>
-        <button><Link to='/blogs'>Blogs</Link></button>
-        <button><Link to='/blogs'>Blogs</Link></button>
+        <Link to='/consultations'><button>Consultations</button></Link>
+        <Link to='/home'><button>Home</button></Link>
+        <Link to='/blogs'><button>Blogs</button></Link>
       </nav>
       <div className='register-container'>  
         <button>Sign Up</button>
