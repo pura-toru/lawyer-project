@@ -14,7 +14,7 @@ const CreateLawyer= () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try{
-        const res = await fetch('http://localhost:5000/lawyers/post', {
+        const res = await fetch('http://localhost:3000/lawyers/post', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

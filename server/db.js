@@ -9,4 +9,15 @@ const pool = mariadb.createPool({
   database: process.env.DB_NAME 
 });
 
-module.exports = pool;
+const query = async(sql, params) => {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const rows = await conn.query(sql, params || []);
+    return rows;
+  } finally {
+    if (conn) conn.release();
+  }
+}
+
+module.exports = { query };

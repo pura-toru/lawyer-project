@@ -20,7 +20,7 @@ const Lawyers= () => {
   useEffect(() => {
     const fetchLawyers = async () => {
       try {
-        const res = await fetch('http://localhost:5000/lawyers');
+        const res = await fetch('http://localhost:3000/lawyers');
         const data = await res.json();
         setLawyer(data);
       } catch (err) {

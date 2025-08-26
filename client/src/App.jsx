@@ -8,7 +8,6 @@ import Register from "./pages/Register.jsx"
 import Splash from "./pages/SplashScreen.jsx"
 import Lawyers from "./pages/Lawyers.jsx"
 import CreateLawyer from "./pages/CreateLawyer.jsx"
-import Test from "./pages/TestBackend.jsx"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,7 +24,6 @@ function App() {
         { <Route path="/home" /*index*/ element={<Home />} /> }
         <Route path="/lawyers" element={<Lawyers />} />
         <Route path="/lawyers/create" element={<CreateLawyer />} />
-        <Route path="/test" element={<Test />} />
       </Routes>
       {showHeader && <Footer />}
     </>
