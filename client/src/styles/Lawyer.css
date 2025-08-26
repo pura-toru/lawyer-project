@@ -49,9 +49,8 @@
 }
 
 .lawyer-container {
-  max-height: 11em;
+  max-height: 12em;
   background-color:rgba(100, 148, 237, 0.103);
-
   display: flex;
   border: 3px dotted var(--onyx);
   margin-top: 10px;
@@ -59,6 +58,16 @@
   width: 60em;
   gap: 5px;
   cursor: pointer;
+}
+
+.lawyer-container h2{
+  background-color: white;
+  border: double;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  padding: 5px;
 }
 
 .lawyer-container p{
@@ -69,7 +78,7 @@
   text-overflow: ellipsis;
   word-wrap: break-word;
   white-space: pre-wrap;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .lawyer-container:hover { 
@@ -77,7 +86,6 @@
   background-color:whitesmoke; 
   transition: 200ms ease; 
   transform: translateY(-10px) translateZ(1px);
-  transition: all (600ms - 200);
  }
 
 .lawyer-container img {
