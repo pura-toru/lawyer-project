@@ -4,6 +4,26 @@ import Popup from 'reactjs-popup';
 import '../styles/LawyerPopup.css'
 
 const LawyerPopup = ({ lawyer }) => {
+  const deleteLawyer = async (lawyer_id) => {
+    try{
+      const res = await fetch(`http://localhost:3000/lawyers/${lawyer_id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.ok){
+        alert("Successfully deleted lawyer!")
+      } else{
+        alert("Failed to delete!");
+      }
+    } 
+    catch (err){
+      console.error("Error: ", err);
+    }
+  }
+
   return(
     <Popup 
       trigger={<button>Details</button>} 
@@ -21,6 +41,7 @@ const LawyerPopup = ({ lawyer }) => {
         <h3>Experience</h3>
         <p>{lawyer.experience}</p>
         <button>Website</button>
+        <button onClick={() => deleteLawyer(lawyer.lawyer_id)}>Delete</button>
         <p>Email: @something</p>
         <p>Phone: </p>
       </div>
