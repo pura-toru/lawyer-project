@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const lawyerRoutes = require('./routes/lawyerRoutes.js');
-const PORT = 3000
+const articleRoutes = require('./routes/articleRoutes.js');
+const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -10,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use('/lawyers', lawyerRoutes)
+app.use('/articles', articleRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)

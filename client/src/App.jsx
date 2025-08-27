@@ -8,11 +8,12 @@ import Register from "./pages/Register.jsx"
 import Splash from "./pages/SplashScreen.jsx"
 import Lawyers from "./pages/Lawyers.jsx"
 import CreateLawyer from "./pages/CreateLawyer.jsx"
+import Articles from "./pages/Articles.jsx"
 
 function App() {
   const [count, setCount] = useState(0);
   const location = useLocation();
-  const pageWithHeaderFooter = ['/home', '/lawyers']
+  const pageWithHeaderFooter = ['/home', '/lawyers', '/articles']
   const showHeader = pageWithHeaderFooter.includes(location.pathname);
   return (
     <>
@@ -21,9 +22,10 @@ function App() {
         <Route path="/" element={<Splash />} />
         {/* <Route path="*" element={<NoPage />} /> */}
         <Route path="/register" element={<Register />} />
-        { <Route path="/home" /*index*/ element={<Home />} /> }
+        <Route path="/home" /*index*/ element={<Home />} />
         <Route path="/lawyers" element={<Lawyers />} />
         <Route path="/lawyers/create" element={<CreateLawyer />} />
+        <Route path="/articles" element={<Articles />} />
       </Routes>
       {showHeader && <Footer />}
     </>
