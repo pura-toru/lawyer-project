@@ -5,22 +5,10 @@ import '../styles/Lawyer.css';
 const Lawyers= () => {
   const [lawyer, setLawyer] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:5000/lawyers')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setLawyer(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //     });
-  // }, []);
-
   useEffect(() => {
     const fetchLawyers = async () => {
       try {
-        const res = await fetch('http://localhost:5000/lawyers');
+        const res = await fetch('http://localhost:3000/lawyers');
         const data = await res.json();
         setLawyer(data);
       } catch (err) {
