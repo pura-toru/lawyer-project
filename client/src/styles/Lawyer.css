@@ -5,8 +5,8 @@
 }
 
 .main-container {
-
   display: flex;
+  background-size: cover;
   padding: 20px;
   font-size: 1.25em;
   flex-direction: column;
