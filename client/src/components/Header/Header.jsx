@@ -1,11 +1,10 @@
-import '../App.css'
-import '../styles/Footer.css'
+import './Header.css';
 
 const Header = () => {
   return(
     <div className="header">
       <div className='logo'>
-        <img src="../../public/images/logo1.png"/>
+        <img src="../../../public/images/logo1.png"/>
         <p>JURISTIQ</p>
       </div> 
       <div className='buttons'>  

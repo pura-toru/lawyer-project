@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/Home.css'
+import './Home.css'
 
 const Home = () => {
 
@@ -16,7 +16,7 @@ const Home = () => {
         <h2>Top consultation</h2>
         <div className="lawyer-cards">
           <div className="lawyer-card">
-            <img src="../../public/images/preview.png" alt="Lawyer" />
+            <img src="../../../public/images/preview.png" alt="Lawyer" />
             <div className="lawyer-info">
               <h3>Rako</h3>
               <p>Family lawyer - Tax lawyer</p>
@@ -25,7 +25,7 @@ const Home = () => {
             </div>
           </div>
           <div className="lawyer-card">
-            <img src="../../public/images/TemporaryPicture.jpg" alt="Lawyer" />
+            <img src="../../../public/images/TemporaryPicture.jpg" alt="Lawyer" />
             <div className="lawyer-info">
               <h3>Bowo</h3>
               <p>Criminal lawyer - Tax lawyer</p>
@@ -34,7 +34,7 @@ const Home = () => {
             </div>
           </div>
           <div className="lawyer-card">
-            <img src="../../public/images/preview.gif" alt="Lawyer" />
+            <img src="../../../public/images/preview.gif" alt="Lawyer" />
             <div className="lawyer-info">
               <h3>Agus</h3>
               <p>Criminal lawyer - Tax lawyer</p>

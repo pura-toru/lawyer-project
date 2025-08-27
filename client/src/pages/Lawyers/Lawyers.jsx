@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import LawyerPopup from '../components/LawyerPopup.jsx'
-import '../styles/Lawyer.css'; 
+import { useState, useEffect } from 'react';
+import LawyerPopup from '../../components/LawyerPopup/LawyerPopup.jsx';
+import './Lawyers.css'; 
 
 const Lawyers= () => {
   const [lawyer, setLawyer] = useState([]);
@@ -15,7 +15,6 @@ const Lawyers= () => {
         console.error("Error fetching lawyers: ", err);
       }
     };
-
     fetchLawyers();
   }, [])
 

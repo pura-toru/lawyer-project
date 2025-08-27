@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Articles.css'
+import './ArticleList.css'
 
-const Articles = () => {
+const ArticleList = () => {
   const [article, setArticle] = useState([]);
 
   useEffect(() => {
-    const fetchArticles = async () => {
+    const getArticles = async () => {
       try {
         const res = await fetch('http://localhost:3000/articles');
         const data = await res.json();
@@ -15,14 +15,14 @@ const Articles = () => {
         console.error(err);
       }
     }
-    fetchArticles();
+    getArticles();
   }, [])
 
   return (
-    <div className='main-container'>
+    <div className='article-list-container'>
       {article.map((article) => {
         return(
-          <Link to="/" key={article.article_id} style={{ textDecoration: 'none', color: 'inherit'}}>
+          <Link to={`/articles/${article.article_id}`} key={article.article_id} style={{ textDecoration: 'none', color: 'inherit'}}>
             <div className='article-container'>
               <img src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/msqd2XJ/videoblocks-police-officer-arresting-criminal-putting-him-on-car-trunk-and-reading-miranda-rights-for-him_r96cpyz6z_thumbnail-1080_01.png" alt="article picture" /> 
               <div className="article-details">
@@ -41,4 +41,4 @@ const Articles = () => {
   )
 }
 
-export default Articles;
+export default ArticleList;
