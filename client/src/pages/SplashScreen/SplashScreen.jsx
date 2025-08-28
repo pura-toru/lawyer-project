@@ -3,11 +3,10 @@ import Splash1 from '../../../public/images/Splash1.png';
 import './SplashScreen.css';
 import { Link } from 'react-router-dom';
 
-// const [count, setCount] = useState(0)
 const quotes = [
   {
     title: "Search for a lawyer",
-    description: "Search for a lawyer, know more about his work experience and his area of practice."
+    description: "Search for a lawyer, know more about their work experience and area of practice."
   },
   {
     title: "Schedule a meeting",
@@ -19,25 +18,18 @@ const quotes = [
   }
 ];
 
-const Interval = 5000; 
+const Interval = 5000;
 
 const SplashScreen = () => {
   const [quotesIndex, setQuotesIndex] = useState(0);
-  const [isHidden, setIsHidden] = useState(false);
 
-  // timer buat auto pagination dots
+  // auto-advance quotes
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (quotesIndex < quotes.length - 1) {
-        setQuotesIndex(quotesIndex + 1);
-      } else {
-        console.log('Onboarding complete');
-      }
-    }, Interval);
-
-    return () => clearTimeout(timer);
+    if (quotesIndex < quotes.length - 1) {
+      const timer = setTimeout(() => setQuotesIndex(quotesIndex + 1), Interval);
+      return () => clearTimeout(timer);
+    }
   }, [quotesIndex]);
-  
 
   const handleNext = () => {
     if (quotesIndex < quotes.length - 1) {
@@ -49,37 +41,48 @@ const SplashScreen = () => {
     setQuotesIndex(quotes.length - 1);
   };
 
+  const isLastSlide = quotesIndex === quotes.length - 1;
+
   return (
     <div className='landing-page-body'>
-    <div className="onboarding-container">
-      <div className="image-container">
-        <img src= {Splash1} alt="Illustration" className="illustration" />
+      {/* Logo + brand name above card */}
+      <div className="splash-header">
+        <img src="/images/logo1.png" alt="Juristiq logo" />
+        <p>JURISTIQ</p>
       </div>
 
-      <div className="pagination-dots">
-        {/* .mapp restructured array, masih belum paham gunanya key*/}
-        {quotes.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === quotesIndex ? 'active' : ''}`}
-          />
-        ))}
+      <div className="onboarding-container">
+        <div className="image-container">
+          <img src={Splash1} alt="Illustration" className="illustration" />
+        </div>
+
+        <div className="pagination-dots">
+          {quotes.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === quotesIndex ? 'active' : ''}`}
+            />
+          ))}
+        </div>
+
+        <h2>{quotes[quotesIndex].title}</h2>
+        <p className='quotes'>{quotes[quotesIndex].description}</p>
+
+        {quotesIndex < quotes.length - 1 ? (
+          <button className="next-button" onClick={handleNext}>Next</button>
+        ) : (
+          <div className="auth-buttons">
+            <Link to="/signup"><button className="auth-btn signup-btn">Sign Up</button></Link>
+            <Link to="/signin"><button className="auth-btn signin-btn">Sign In</button></Link>
+          </div>
+        )}
+
+        <Link to="/home">
+          <button className="skip-link" onClick={handleSkip}>Skip</button>
+        </Link>
       </div>
-
-      <h2>{quotes[quotesIndex].title}</h2>
-      <p className='quotes'>{quotes[quotesIndex].description}</p>
-
-         <button className= {quotesIndex < quotes.length - 1 ? 'next-button' : 'hidden'} onClick={handleNext}>
-          Next
-        {/* {quotesIndex < quotes.length - 1 ? '' : 'Done'} */}
-        {/* ubah inner html klo udh di akhir array */}
-      </button>
-      <Link to="/home"><button className="skip-link" onClick={handleSkip}>Skip</button></Link>
-    </div>
-    </div>
+    </div>  
   );
 };
-        // <button onClick={() => setCount((count) => count + 1)}>
-        //   count is {count}
-        // buat count/click. Currently unused
+
 export default SplashScreen;

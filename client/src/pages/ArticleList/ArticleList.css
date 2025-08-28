@@ -1,4 +1,4 @@
-.article-list-container {
+.article-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   color: var(--onyx);
@@ -8,7 +8,7 @@
   row-gap: 2em;
 }
 
-.article-list-container .article-container {
+.article-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -18,19 +18,25 @@
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.article-list-container .article-container img {
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 6px 18px;
+}
+
+.article-card img {
   width: 100%;
   /* height: 20em; */
-  object-fit: cover; /* Kata GPT buat bantu maintain aspect ration & crop */
+  object-fit: cover; /* helps maintain aspect ratio & crop */
 }
 
-.article-list-container .article-container button {
+.article-card button {
   width: 10em;
 }
 
-.article-list-container .article-content {
+.article-card-content {
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
@@ -38,11 +44,11 @@
   text-align: justify;
 }
 
-.article-list-container .article-details {
-  margin: 0 1em 0 1em; 
+.article-card-details {
+  margin: 0 1em 0 1em;
 }
 
-.article-list-container .poster-container {
+.article-card-poster {
   display: flex;
   margin-top: 0.5em;
   gap: 0.5em;
@@ -50,8 +56,9 @@
   align-items: center;
 }
 
-.article-list-container .poster-container img {
+.article-card-poster img {
   width: 2.5em;
   height: 2.5em;
   border-radius: 100%;
 }
+

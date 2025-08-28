@@ -1,44 +1,55 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './ArticleList.css'
+import './ArticleList.css';
 
 const ArticleList = () => {
-  const [article, setArticle] = useState([]);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const getArticles = async () => {
       try {
         const res = await fetch('http://localhost:3000/articles');
         const data = await res.json();
-        setArticle(data); 
+        setArticles(data); 
       } catch (err) {
         console.error(err);
       }
-    }
+    };
     getArticles();
-  }, [])
+  }, []);
 
   return (
-    <div className='article-list-container'>
-      {article.map((article) => {
-        return(
-          <Link to={`/articles/${article.article_id}`} key={article.article_id} style={{ textDecoration: 'none', color: 'inherit'}}>
-            <div className='article-container'>
-              <img src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/msqd2XJ/videoblocks-police-officer-arresting-criminal-putting-him-on-car-trunk-and-reading-miranda-rights-for-him_r96cpyz6z_thumbnail-1080_01.png" alt="article picture" /> 
-              <div className="article-details">
-                <div className="poster-container">
-                  <img src="https://i.kym-cdn.com/entries/icons/original/000/040/009/3dsaulcover.jpg" alt="user photo" />
-                  <h3>Saul Goodman</h3>
-                </div>
-                <h2 className='article-title'>{article.article_title}</h2>
-                <p className='article-content'>{article.article_content}</p>
+    <div className="article-list">
+      {articles.map((article) => (
+        <Link
+          to={`/articles/${article.article_id}`}
+          key={article.article_id}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <div className="article-card">
+            <img
+              className="article-card-image"
+              src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/msqd2XJ/videoblocks-police-officer-arresting-criminal-putting-him-on-car-trunk-and-reading-miranda-rights-for-him_r96cpyz6z_thumbnail-1080_01.png"
+              alt="article"
+            />
+
+            <div className="article-card-details">
+              <div className="article-card-poster">
+                <img
+                  src="https://i.kym-cdn.com/entries/icons/original/000/040/009/3dsaulcover.jpg"
+                  alt="user avatar"
+                />
+                <h3>Saul Goodman</h3>
               </div>
+
+              <h2 className="article-card-title">{article.article_title}</h2>
+              <p className="article-card-content">{article.article_content}</p>
             </div>
-          </Link>
-        )
-      })}
-    </div>
-  )
-}
+          </div>
+        </Link>
+      ))}
+    </div>  
+  );
+};
 
 export default ArticleList;
