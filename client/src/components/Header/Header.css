@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1em;
+  background-color: var(--blue);
+  color: white;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.header-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2em;
+}
+
+.header-nav a {
+  position: relative;   /* Needed for ::after positioning */
+  color: var(--beige);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em 0;     /* Add padding so underline doesn’t hug text */
+}
+
+/* Thick underline effect */
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;            /* Place it just under the link */
+  left: 0;
+  width: 100%;
+  height: 4px;          /* Thickness of the underline */
+  background-color: var(--beige);
+  transform: scaleX(0); /* Hidden by default */
+  transition: transform 0.3s ease;
+  transform-origin: right;
+}
+
+.header-nav a:hover::after {
+  transform: scaleX(1);  /* Expands underline on hover */
+  transform-origin: left;
+}
+
+.header-auth {
+  display: flex;
+  gap: 1em;
+}
+
+.header-auth button {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-signup {
+  background-color: white;
+  color: var(--blue);
+}
+
+.btn-signin {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+

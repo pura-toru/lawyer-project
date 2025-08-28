@@ -1,36 +1,49 @@
-import { useState, useEffect} from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import './App.css';
-import Header from "./components/Header.jsx"
-import Footer from './components/Footer.jsx';
-import Home from "./pages/Home.jsx"
-import Register from "./pages/Register.jsx"
-import Splash from "./pages/SplashScreen.jsx"
-import Lawyer from "./pages/Lawyer.jsx"
-import CreateLawyer from "./pages/CreateLawyer.jsx"
-import Test from "./pages/TestBackend.jsx" //Ini page buat test backend, gw udh ada contoh kalo bisa lu ikutin aja ntar ada database dia cara jalan sama soalny api endpoint gw samain. Cara run liat di TestBackend.jsx & app.py di server.
+import { Routes, Route, useLocation } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+
+// Import all pages at once
+import Home from "./pages/Home/Home.jsx";
+import Register from "./pages/Register/Register.jsx";
+import Splash from "./pages/SplashScreen/SplashScreen.jsx";
+import Lawyers from "./pages/Lawyers/Lawyers.jsx";
+import CreateLawyer from "./pages/CreateLawyer/CreateLawyer.jsx";
+import ArticleList from "./pages/ArticleList/ArticleList.jsx";
+import Article from "./components/Article/Article.jsx";
+
+// Route config 
+const routes = [
+  { path: "/", element: <Splash /> },
+  { path: "/register", element: <Register /> },
+  { path: "/home", element: <Home /> },
+  { path: "/lawyers", element: <Lawyers /> },
+  { path: "/lawyers/create", element: <CreateLawyer /> },
+  { path: "/articles", element: <ArticleList /> },
+  { path: "/articles/:id", element: <Article /> },
+];
+
+// Pages that show header/footer
+const withLayout = ["/home", "/lawyers", "/articles"];
 
 function App() {
-  const [count, setCount] = useState(0);
   const location = useLocation();
-  const pageWithHeaderFooter = ['/home', '/lawyer']
-  const showHeader = pageWithHeaderFooter.includes(location.pathname);
-  /* Header gw taro diluar <Routes> biar nongol di tiap page, kykny bisa di set biar nongol di page tertentu tp gw blm research */
+  const showLayout = withLayout.some((path) =>
+    location.pathname.startsWith(path)
+  );
+
   return (
     <>
-      {showHeader && <Header />} 
+      {showLayout && <Header />}
       <Routes>
-        <Route path="/" element={<Splash />} />
-        {/* <Route path="*" element={<NoPage />} /> */}
-        <Route path="/register" element={<Register />} />
-        { <Route path="/home" /*index*/ element={<Home />} /> }
-        <Route path="/lawyer" element={<Lawyer />} />
-        <Route path="/lawyer/create" element={<CreateLawyer />} />
-        <Route path="/test" element={<Test />} />
+        {routes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
       </Routes>
-      {showHeader && <Footer />}
+      {showLayout && <Footer />}
     </>
   );
 }
 
 export default App;
+

@@ -1,0 +1,217 @@
+.hidden {
+  display: none;
+}
+
+/* Background */
+.landing-page-body {
+  background: linear-gradient(135deg, #90B7E8 0%, #3C8DAD 100%);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative bubbles */
+.landing-page-body::before,
+.landing-page-body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  animation: float 8s infinite ease-in-out;
+}
+.landing-page-body::before {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+}
+.landing-page-body::after {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  right: -80px;
+}
+
+/* Logo / Brand above the card */
+.splash-header {
+  position: absolute;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.splash-header img {
+  width: 60px;
+  height: 60px;
+}
+
+.splash-header p {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+/* Onboarding Card */
+.onboarding-container {
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  animation: fadeIn 0.8s ease;
+  z-index: 1;
+  position: relative;
+}
+
+/* Logo + Title */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.logo-container img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.logo-container h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #081a30;
+}
+
+/* Image */
+.image-container {
+  margin-bottom: 20px;
+}
+
+.illustration {
+  width: 220px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Pagination Dots */
+.pagination-dots {
+  margin: 15px 0;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.dot.active {
+  background-color: #3B5D86;
+  transform: scale(1.2);
+}
+
+/* Text */
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 12px 0;
+  color: #081a30;
+  animation: fadeInUp 0.8s ease;
+}
+
+.quotes {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  padding: 0 8px;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Buttons */
+.next-button, .skip-link, .auth-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 80%;
+}
+
+/* Next button */
+.next-button {
+  background-color: #3B5D86;
+  color: #fff;
+}
+.next-button:hover {
+  background-color: #2a4463;
+}
+
+/* Skip button */
+.skip-link {
+  background-color: transparent;
+  color: #3B5D86;
+  border: 2px solid #3B5D86;
+}
+.skip-link:hover {
+  background-color: #3B5D86;
+  color: #fff;
+}
+
+/* Final auth buttons */
+.auth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+.auth-btn {
+  width: 100%;
+}
+.signup-btn {
+  background-color: #3C8DAD;
+  color: #fff;
+}
+.signup-btn:hover {
+  background-color: #327a94;
+}
+.signin-btn {
+  background-color: #FFD700;
+  color: #081a30;
+}
+.signin-btn:hover {
+  background-color: #e6c200;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
