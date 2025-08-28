@@ -10,13 +10,13 @@ const Header = () => {
         <p>JURISTIQ</p>
       </div> 
       <nav className="nav-bar">
-        <Link to='/consultations'><button>Consultations</button></Link>
-        <Link to='/home'><button>Home</button></Link>
-        <Link to='/blogs'><button>Blogs</button></Link>
+        <Link to='/consultations'><button className='nav-bar-button'>Consultations</button></Link>
+        <Link to='/home'><button className='nav-bar-button'>Home</button></Link>
+        <Link to='/articles'><button className='nav-bar-button'>Articles</button></Link>
       </nav>
       <div className='register-container'>  
-        <button>Sign Up</button>
-        <button>Sign In</button>
+        <button className='nav-bar-button'>Sign Up</button>
+        <button className='nav-bar-button'>Sign In</button>
       </div> 
     </div>
   )

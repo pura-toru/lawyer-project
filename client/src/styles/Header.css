@@ -8,9 +8,9 @@
   margin: 0;
   /* width: 100%; */
   color: var(--beige);
-  background-color: var(--blue);
+  background-color: whitesmoke;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items:center;
   padding: 10px 20px;
   border-bottom: 1px solid #ddd;
@@ -19,13 +19,19 @@
   /* z-index: 10;  */
 }
 
+.nav-bar-button{
+  background-color: whitesmoke;
+  color: var(--onyx);
+}
+
+.nav-bar-button:hover{
+  border-bottom: 3px solid var(--blue);
+  box-shadow: 0 2px 1px var(--onyx);
+}
+
 .nav-bar p{
   display: flex;
   padding: 20px;
-}
-
-.register-container{
- gap: 20px;
 }
 
 /* .buttons button{
@@ -33,8 +39,9 @@
 } */
 
 .logo{
+  
   text-align: center;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 10%;
   color: #1445a2;
   padding: 3px;

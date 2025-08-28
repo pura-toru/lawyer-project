@@ -4,7 +4,7 @@
   --onyx: #3C3C3B;
 }
 
-.main-container {
+.lawyer-page-container {
   display: flex;
   background-size: cover;
   padding: 20px;
@@ -21,7 +21,7 @@
 
   border-radius: 0px 0px 95% 0px;
   font-size: small;
-  max-width: 79%;
+  max-width: 30%;
   padding: 20px;
   padding-left: 5em;
   background-color: #1445a07c;

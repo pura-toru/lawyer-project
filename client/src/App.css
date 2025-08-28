@@ -28,7 +28,7 @@ button {
 button:hover {
   transition: 200ms ease;
   transform: translateY(5px) translateZ(0px);
-  transition: all (600ms - 200);
+
 }
 
 /* button:focus,

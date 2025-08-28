@@ -31,7 +31,7 @@ Kasih filter buat sort gitu di search container
           <button type="submit">Search</button>
         </form>
       </div>
-      <div className="main-container">        
+      <div className="lawyer-page-container">        
         {lawyer.map((lawyer) => {
           return (  
           <div className='placeholder'>
