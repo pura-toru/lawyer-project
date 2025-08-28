@@ -1,7 +1,7 @@
 const db = require('../db.js');
 
 const register = async (req, res) => {
-  const email = req.body.username;
+  const email = req.body.email;
   const password = req.body.password;
 
   try {
@@ -25,7 +25,7 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  const email = req.body.username;
+  const email = req.body.email;
   const password = req.body.password;
 
   try {
