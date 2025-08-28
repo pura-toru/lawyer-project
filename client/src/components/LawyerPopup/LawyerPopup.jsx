@@ -1,9 +1,9 @@
 // Make https://react-popup.elazizi.com
 // TODO:
-// Add prompt for delete button
+// 1. Add prompt for delete button
 import React, { useState, useEffect } from 'react';
 import Popup from 'reactjs-popup';
-import '../styles/LawyerPopup.css'
+import './LawyerPopup.css'
 
 const LawyerPopup = ({ lawyer }) => {
   const deleteLawyer = async (lawyer_id) => {

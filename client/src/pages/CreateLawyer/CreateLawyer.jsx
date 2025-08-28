@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/CreateLawyer.css'; 
+import './CreateLawyer.css'; 
 
 const CreateLawyer= () => {
     const [formData, setFormData] = useState({
