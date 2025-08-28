@@ -1,16 +1,21 @@
-:root {
+/* =========================
+   Global Reset
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Global Typography
+   ========================= */
+body {
   font-family: "Roboto", system-ui, sans-serif;
-  /*
-  line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; 
-   */
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
