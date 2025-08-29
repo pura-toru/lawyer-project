@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import '../styles/CreateLawyer.css'; 
 
 
 const longText = "People who use our service may have uploaded your contact information to Lawyery. Learn more. By tapping Submit, you agree to create an account and to Lawyery's Terms, Privacy Policy and Cookies Policy. The privacy policy describes the ways we can use the information we collect when you create an account. For example, we use this information to provide, personalise and improve our products, including ads."
 
 const Register = () => {
-      const [registerData, setregisterData] = useState({
+      const navigate = useNavigate();
+
+      const [registerData, setRegisterData] = useState({
         email: '',
         password: '',
       });
 
+      const handleChange =  e => {
+        setRegisterData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+      };
     const handleSubmit = async (e) => {
       e.preventDefault();
       try{
-        const res = await fetch('http://localhost:3000/lawyers', {
+        const res = await fetch('http://localhost:3000/users', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -21,15 +27,17 @@ const Register = () => {
           body: JSON.stringify(registerData),
         });
         const data = await res.json();
+        // const text = await res.text();
+        // console.log('Raw response:', text);
         if (res.ok){
-          alert("Welcome");
+          toast( data.message || " Welcome");
+          navigate('/login');
         } else{
-          alert(data.message || "Failed to post!");
+          alert(data.message || "Registration error");
         }
-      } 
-      catch (err){
+      } catch (err){
         console.error("Error: ", err);
-        alert("Failed to send data!")
+        alert("Network error")
       }
     }
   return(
@@ -40,18 +48,20 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <label>Email</label>
           <input
+            name='email'
             value={registerData.email}
-            onChange={(e) => setregisterData({ ...registerData, email: e.target.value})}
-            type="text" maxLength="35" placeholder="Email" required/>
+            onChange={(e) => setRegisterData({ ...registerData, email: e.target.value})}
+            type="email" maxLength="35" placeholder="Email" required/>
 
           <label>Password</label>
           <input
+            name='password'
             value={registerData.password}
-            onChange={(e) => setregisterData({ ...registerData, password: e.target.value})}
-            type="text" maxLength="35" placeholder="Password" required/>
-        </form>
+            onChange={(e) => setRegisterData({ ...registerData, password: e.target.value})}
+            type="password" maxLength="35" placeholder="Password" required/>
 
-         <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
     

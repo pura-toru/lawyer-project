@@ -5,47 +5,48 @@ const register = async (req, res) => {
   const password = req.body.password;
 
   try {
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
+    const rows = await db.query("SELECT * FROM users WHERE email = ?", [
       email,
     ]);
 
-    if (checkResult.rows.length > 0) {
-      res.send("Email already exists. Try logging in.");
+    if (rows.length > 0) {
+      return res.status(409).json({ message: "Email already exists. Try logging in." });
     } else {
       const result = await db.query(
-        "INSERT INTO users (email, password) VALUES ($1, $2)",
+        "INSERT INTO users (email, password) VALUES (?, ?)",
         [email, password]
       );
       console.log(result);
-
+      res.status(201).json({ message: "Registration successful" });
     }
   } catch (err) {
     console.log(err);
+    res.status(500).json( {message: "Server error"});
   }
 };
 
 const login = async (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+  const { email, password } = req.body;
 
   try {
-    const result = await db.query("SELECT * FROM users WHERE email = $1", [
-      email,
-    ]);
-    if (result.rows.length > 0) {
-      const user = result.rows[0];
+    const rows = await db.query("SELECT * FROM users WHERE email = ?", [email]);
+
+    if (rows.length > 0) {
+      const user = rows[0];
       const storedPassword = user.password;
 
       if (password === storedPassword) {
-        
+        // send back a token here when using JWT
+        res.json({ message: "Login successful"});
       } else {
-        res.send("Incorrect Password");
+        res.status(401).json({ message: "Incorrect password"});
       }
     } else {
-      res.send("User not found");
+      res.status(404).json({ message:"User not found"});
     }
   } catch (err) {
-    console.log(err);
+    console.error("Login error:", err);
+    res.status(500).json({ message: "Server error"});
   }
 };
 

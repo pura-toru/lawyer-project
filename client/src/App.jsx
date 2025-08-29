@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer.jsx";
 
 // Import all pages at once
 import Home from "./pages/Home/Home.jsx";
+import Login  from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import Splash from "./pages/SplashScreen/SplashScreen.jsx";
 import Lawyers from "./pages/Lawyers/Lawyers.jsx";
@@ -17,6 +18,7 @@ const routes = [
   { path: "/", element: <Splash /> },
   { path: "/register", element: <Register /> },
   { path: "/home", element: <Home /> },
+  { path: "/login", element: <Login /> },
   { path: "/lawyers", element: <Lawyers /> },
   { path: "/lawyers/create", element: <CreateLawyer /> },
   { path: "/articles", element: <ArticleList /> },
