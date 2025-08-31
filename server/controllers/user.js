@@ -10,7 +10,7 @@ const register = async (req, res) => {
     ]);
 
     if (rows.length > 0) {
-      return res.status(409).json({ message: "Email already exists. Try logging in." });
+      return res.status(409).json({message: "Email already exists. Try logging in." });
     } else {
       const result = await db.query(
         "INSERT INTO users (email, password) VALUES (?, ?)",
@@ -21,7 +21,7 @@ const register = async (req, res) => {
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json( {message: "Server error"});
+    res.status(500).json({message: "Server error"});
   }
 };
 

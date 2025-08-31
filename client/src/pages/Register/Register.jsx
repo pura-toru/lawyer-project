@@ -19,7 +19,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try{
-        const res = await fetch('http://localhost:3000/users', {
+        const res = await fetch('http://localhost:3000/users/register', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const Register = () => {
         // const text = await res.text();
         // console.log('Raw response:', text);
         if (res.ok){
-          toast( data.message || " Welcome");
+          alert( data.message || " Welcome");
           navigate('/login');
         } else{
           alert(data.message || "Registration error");

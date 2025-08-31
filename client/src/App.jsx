@@ -17,8 +17,8 @@ import Article from "./components/Article/Article.jsx";
 const routes = [
   { path: "/", element: <Splash /> },
   { path: "/register", element: <Register /> },
-  { path: "/home", element: <Home /> },
   { path: "/login", element: <Login /> },
+  { path: "/home", element: <Home /> },
   { path: "/lawyers", element: <Lawyers /> },
   { path: "/lawyers/create", element: <CreateLawyer /> },
   { path: "/articles", element: <ArticleList /> },

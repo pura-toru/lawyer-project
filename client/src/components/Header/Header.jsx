@@ -18,8 +18,12 @@ const Header = () => {
 
       {/* Right: Auth Buttons */}
       <div className="header-auth">
+        <Link to="/register">
         <button className="btn-signup">Sign Up</button>
+        </Link>
+        <Link to="/login">
         <button className="btn-signin">Sign In</button>
+        </Link>
       </div>
     </header>
   );

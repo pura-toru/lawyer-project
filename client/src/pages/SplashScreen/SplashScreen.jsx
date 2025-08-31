@@ -72,8 +72,8 @@ const SplashScreen = () => {
           <button className="next-button" onClick={handleNext}>Next</button>
         ) : (
           <div className="auth-buttons">
-            <Link to="/signup"><button className="auth-btn signup-btn">Sign Up</button></Link>
-            <Link to="/signin"><button className="auth-btn signin-btn">Sign In</button></Link>
+            <Link to="/register"><button className="auth-btn signup-btn">Sign Up</button></Link>
+            <Link to="/login"><button className="auth-btn signin-btn">Sign In</button></Link>
           </div>
         )}
 

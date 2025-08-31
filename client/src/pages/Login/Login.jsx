@@ -5,33 +5,30 @@ import { useNavigate } from 'react-router-dom';
 
 const longText = "People who use our service may have uploaded your contact information to Lawyery. Learn more. By tapping Submit, you agree to create an account and to Lawyery's Terms, Privacy Policy and Cookies Policy. The privacy policy describes the ways we can use the information we collect when you create an account. For example, we use this information to provide, personalise and improve our products, including ads."
 
-const Register = () => {
+const Login = () => {
       const navigate = useNavigate();
 
-      const [registerData, setRegisterData] = useState({
+      const [loginData, setLoginData] = useState({
         email: '',
         password: '',
       });
 
-      const handleChange =  e => {
-        setRegisterData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-      };
     const handleSubmit = async (e) => {
       e.preventDefault();
       try{
-        const res = await fetch('http://localhost:3000/register', {
+        const res = await fetch('http://localhost:3000/users/login', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(registerData),
+          body: JSON.stringify(loginData),
         });
         const data = await res.json();
         if (res.ok){
-          toast("Welcome");
-          navigate('/login');
+          alert("Welcome");
+          navigate('/home');
         } else{
-          alert(data.message || "Registration error");
+          alert(data.message || "Login error");
         }
       } catch (err){
         console.error("Error: ", err);
@@ -47,15 +44,15 @@ const Register = () => {
           <label>Email</label>
           <input
             name='email'
-            value={registerData.email}
-            onChange={(e) => setRegisterData({ ...registerData, email: e.target.value})}
+            value={loginData.email}
+            onChange={(e) => setLoginData({ ...loginData, email: e.target.value})}
             type="email" maxLength="35" placeholder="Email" required/>
 
           <label>Password</label>
           <input
             name='password'
-            value={registerData.password}
-            onChange={(e) => setRegisterData({ ...registerData, password: e.target.value})}
+            value={loginData.password}
+            onChange={(e) => setLoginData({ ...loginData, password: e.target.value})}
             type="password" maxLength="35" placeholder="Password" required/>
 
                 <button type="submit">Submit</button>
@@ -66,4 +63,4 @@ const Register = () => {
   )
 }
 
-export default Register;
+export default Login;
