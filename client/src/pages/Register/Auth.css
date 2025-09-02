@@ -1,16 +1,9 @@
-* {
-  background-color: #F5F7FA;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
 .auth-container {
   max-width: 500px;
   margin: 80px auto;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.1);
 }
 
 .auth-container h1 {
@@ -52,6 +45,7 @@
 .form-container button {
   background-color: #3C8DAD;
   color: white;
+  width: 150px;
   padding: 12px;
   font-size: 16px;
   border: none;
@@ -62,6 +56,7 @@
 
 .form-container button:hover {
   background-color: #327a97;
+  width: 180px;
 }
 
 .auth-footer {
