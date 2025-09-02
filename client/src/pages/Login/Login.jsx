@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import '../styles/CreateLawyer.css'; 
+import '../Register/Auth.css';
 
 
 const longText = "People who use our service may have uploaded your contact information to Lawyery. Learn more. By tapping Submit, you agree to create an account and to Lawyery's Terms, Privacy Policy and Cookies Policy. The privacy policy describes the ways we can use the information we collect when you create an account. For example, we use this information to provide, personalise and improve our products, including ads."
@@ -36,7 +36,7 @@ const Login = () => {
       }
     }
   return(
-    <div className="register-box">
+    <div className="auth-container">
       <h1>Login Page</h1>
       <p>We're excited to have you join us</p>
       <div className="form-container">
@@ -55,8 +55,11 @@ const Login = () => {
             onChange={(e) => setLoginData({ ...loginData, password: e.target.value})}
             type="password" maxLength="35" placeholder="Password" required/>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Login</button>
         </form>
+        <div className="auth-footer">
+          Don't have an account? <a href="/register">Register</a>
+        </div>
       </div>
     </div>
     

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import '../styles/CreateLawyer.css'; 
+import './Auth.css';
 
 
 const longText = "People who use our service may have uploaded your contact information to Lawyery. Learn more. By tapping Submit, you agree to create an account and to Lawyery's Terms, Privacy Policy and Cookies Policy. The privacy policy describes the ways we can use the information we collect when you create an account. For example, we use this information to provide, personalise and improve our products, including ads."
@@ -41,7 +41,7 @@ const Register = () => {
       }
     }
   return(
-    <div className="register-box">
+    <div className="auth-container">
       <h1>Get started on lawyery</h1>
       <p>We're excited to have you join us</p>
       <div className="form-container">
@@ -62,6 +62,10 @@ const Register = () => {
 
             <button type="submit">Submit</button>
         </form>
+
+        <div className="auth-footer">
+          Already have an account? <a href="/login">Login</a>
+        </div>
       </div>
     </div>
     
