@@ -36,7 +36,7 @@ const login = async (req, res) => {
       const storedPassword = user.password;
 
       if (password === storedPassword) {
-        // send back a token here when using JWT
+        // send back a token here when using JWT later
         res.json({ message: "Login successful"});
       } else {
         res.status(401).json({ message: "Incorrect password"});

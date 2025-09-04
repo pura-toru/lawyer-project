@@ -43,7 +43,7 @@ const Register = () => {
   return(
     <div className="auth-container">
       <h1>Get started on lawyery</h1>
-      <p>We're excited to have you join us</p>
+      <p>Protect what matters. Register today</p>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <label>Email</label>

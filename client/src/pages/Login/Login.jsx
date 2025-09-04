@@ -37,8 +37,8 @@ const Login = () => {
     }
   return(
     <div className="auth-container">
-      <h1>Login Page</h1>
-      <p>We're excited to have you join us</p>
+      <h1>Log in and take control</h1>
+      <p>Your legal journey continues here</p>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <label>Email</label>

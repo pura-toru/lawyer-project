@@ -51,6 +51,7 @@
 /* Each card */
 .lawyer-card {
   width: var(--card-width);
+  height: 300px;
   flex: 0 0 var(--card-width);
   background-color: white;
   border-radius: 10px;
