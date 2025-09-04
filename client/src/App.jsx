@@ -5,8 +5,8 @@ import Footer from "./components/Footer/Footer.jsx";
 
 // Import all pages at once
 import Home from "./pages/Home/Home.jsx";
-import Login  from "./pages/Login/Login.jsx";
-import Register from "./pages/Register/Register.jsx";
+import Login  from "./pages/Authentication/Login.jsx";
+import Register from "./pages/Authentication/Register.jsx";
 import Splash from "./pages/SplashScreen/SplashScreen.jsx";
 import Lawyers from "./pages/Lawyers/Lawyers.jsx";
 import CreateLawyer from "./pages/CreateLawyer/CreateLawyer.jsx";
