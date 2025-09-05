@@ -28,7 +28,7 @@ const LawyerPopup = ({ lawyer }) => {
 
   return(
     <Popup 
-      trigger={<button>Details</button>} 
+      trigger={<button className='details-button'>Details</button>} 
       position="left center"
       modal
     >
