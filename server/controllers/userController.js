@@ -1,5 +1,6 @@
 const db = require('../db.js');
 const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const register = async (req, res) => {
   const { email, password } = req.body;
@@ -10,18 +11,24 @@ const register = async (req, res) => {
     ]);
 
     //Hash
-    const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    // const hashedPassword = await bcrypt.hash(password, saltRounds);
+    
 
     if (rows.length > 0) {
       return res.status(409).json({message: "Email already exists. Try logging in." });
     } else {
-      const result = await db.query(
-        "INSERT INTO users (email, password) VALUES (?, ?)", [email, hashedPassword]
+      bcrypt.hash(password, saltRounds, async (err, hashedPassword) => {
+        if (err) {
+          console.log("Hashing password error", err);
+        } else {
+          const result = await db.query(
+          "INSERT INTO users (email, password) VALUES (?, ?)", [email, hashedPassword]
       );
       console.log(result);
       res.status(201).json({ message: "Registration successful" });
-    }
+        }
+      });
+    }  
   } catch (err) {
     console.log(err);
     res.status(500).json({message: "Server error"});
@@ -39,16 +46,20 @@ const login = async (req, res) => {
       const storedPassword = user.password;
   
       //Hash Unlock
-      const match = await bcrypt.compare(password, storedPassword);
+      // const match = await bcrypt.compare(password, storedPassword);
+      bcrypt.compare(password, storedPassword, (err, match) => {
+        if (err) {
+          console.log("Error comparing passwords:", err);
+        } else {
 
-      // if (password === storedPassword) {
-        // send back a token here when using JWT later
-      if (match) {
-        // send back a token here when using JWT
-        res.json({ message: "Login successful"});
-      } else {
-        res.status(401).json({ message: "Incorrect password"});
-      }
+          if (match) {
+            // send back a token here when using JWT
+            res.json({ message: "Login successful"});
+          } else {
+            res.status(401).json({ message: "Incorrect password"});
+          }
+        }
+      });
     } else {
       res.status(404).json({ message:"User not found"});
     }

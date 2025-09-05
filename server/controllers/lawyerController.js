@@ -2,7 +2,7 @@ const db = require('../db.js');
 
 const getLawyers = async (req, res) => {
   try {
-    const lawyers = await db.query('SELECT * FROM lawyers;');
+    const lawyers = await db.query('SELECT * FROM lawyers LIMIT 10;');
     res.status(200).json(lawyers);
   } catch(err) {
     console.error('Unable to connect:', err);
