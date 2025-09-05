@@ -41,13 +41,10 @@ const login = async (req, res) => {
       //Hash Unlock
       const match = await bcrypt.compare(password, storedPassword);
 
-<<<<<<< HEAD:server/controllers/user.js
-      if (password === storedPassword) {
+      // if (password === storedPassword) {
         // send back a token here when using JWT later
-=======
       if (match) {
         // send back a token here when using JWT
->>>>>>> 6fd3c5a1240fd181caeb3e3152e9a048562b2c62:server/controllers/userController.js
         res.json({ message: "Login successful"});
       } else {
         res.status(401).json({ message: "Incorrect password"});

@@ -41,39 +41,40 @@ const Register = () => {
   };
 
   return(
-    <div className="auth-container">
-      <h1>Get started on lawyery</h1>
-      <p>Protect what matters. Register today</p>
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <label>Upload an image:</label>
-          <input name='user-photo' type="file" />
+    <div className="auth-page">
+      <div className="auth-container">
+        <h1>Get started on <a>JURISTIQ</a></h1>
+        <p>Protect what matters. Register today</p>
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <label>Upload an image:</label>
+            <input name='user-photo' type="file" />
 
-          <label>Username</label>
+            <label>Username</label>
 
-          <label>Email</label>
-          <input
-            name='email'
-            value={registerData.email}
-            onChange={(e) => setRegisterData({ ...registerData, email: e.target.value})}
-            type="email" maxLength="35" placeholder="Email" required/>
+            <label>Email</label>
+            <input
+              name='email'
+              value={registerData.email}
+              onChange={(e) => setRegisterData({ ...registerData, email: e.target.value})}
+              type="email" maxLength="35" placeholder="Email" required/>
 
-          <label>Password</label>
-          <input
-            name='password'
-            value={registerData.password}
-            onChange={(e) => setRegisterData({ ...registerData, password: e.target.value})}
-            type="password" maxLength="35" placeholder="Password" required/>
+            <label>Password</label>
+            <input
+              name='password'
+              value={registerData.password}
+              onChange={(e) => setRegisterData({ ...registerData, password: e.target.value})}
+              type="password" maxLength="35" placeholder="Password" required/>
 
-            <button type="submit">Submit</button>
-        </form>
+              <button type="submit">Submit</button>
+          </form>
 
-        <div className="auth-footer">
-          Already have an account? <a href="/login">Login</a>
+          <div className="auth-footer">
+            Already have an account? <a href="/login">Login</a>
+          </div>
         </div>
       </div>
     </div>
-    
   )
 }
 

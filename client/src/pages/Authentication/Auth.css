@@ -1,16 +1,23 @@
 .auth-container {
   max-width: 500px;
-  margin: 80px auto;
-  padding: 40px;
+  margin: 120px auto;
+  padding: 50px;
   border-radius: 8px;
   box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 .auth-container h1 {
   text-align: center;
   margin-bottom: 24px;
   color: #3C8DAD;
 }
+
+.auth-container h1 a{
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  color: #3C8DAD;
+}
+
 
 .auth-container p{
     text-align: center;
@@ -48,15 +55,17 @@
   width: 150px;
   padding: 12px;
   font-size: 16px;
-  border: none;
   border-radius: 4px;
+  border: none;
   cursor: pointer;
   transition: 0.2s ease;
+  box-shadow: 0px 5px 0px #24586d;
 }
 
 .form-container button:hover {
-  background-color: #327a97;
-  width: 180px;
+  background-color: #316f88;
+  box-shadow: inset 0px 2px 8px #24586d;
+  transform: translateY(5px);
 }
 
 .auth-footer {

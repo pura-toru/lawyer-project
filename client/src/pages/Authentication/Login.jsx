@@ -35,33 +35,34 @@ const Login = () => {
       }
     }
   return(
-    <div className="auth-container">
-      <h1>Log in and take control</h1>
-      <p>Your legal journey continues here</p>
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input
-            name='email'
-            value={loginData.email}
-            onChange={(e) => setLoginData({ ...loginData, email: e.target.value})}
-            type="email" maxLength="35" placeholder="Email" required/>
+    <div className="auth-page">
+      <div className="auth-container">
+        <h1>Log in and take control</h1>
+        <p>Your legal journey continues here</p>
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <label>Email</label>
+            <input
+              name='email'
+              value={loginData.email}
+              onChange={(e) => setLoginData({ ...loginData, email: e.target.value})}
+              type="email" maxLength="35" placeholder="Email" required/>
 
-          <label>Password</label>
-          <input
-            name='password'
-            value={loginData.password}
-            onChange={(e) => setLoginData({ ...loginData, password: e.target.value})}
-            type="password" maxLength="35" placeholder="Password" required/>
+            <label>Password</label>
+            <input
+              name='password'
+              value={loginData.password}
+              onChange={(e) => setLoginData({ ...loginData, password: e.target.value})}
+              type="password" maxLength="35" placeholder="Password" required/>
 
-                <button type="submit">Login</button>
-        </form>
-        <div className="auth-footer">
-          Don't have an account? <a href="/register">Register</a>
+                  <button type="submit">Login</button>
+          </form>
+          <div className="auth-footer">
+            Don't have an account? <a href="/register">Register</a>
+          </div>
         </div>
       </div>
     </div>
-    
   )
 }
 
