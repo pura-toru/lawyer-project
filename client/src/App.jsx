@@ -12,17 +12,22 @@ import Lawyers from "./pages/Lawyers/Lawyers.jsx";
 import CreateLawyer from "./pages/CreateLawyer/CreateLawyer.jsx";
 import ArticleList from "./pages/ArticleList/ArticleList.jsx";
 import Article from "./components/Article/Article.jsx";
+import CreateArticle from "./pages/CreateArticle/CreateArticle.jsx";
 
-// Route config 
+// Route configArticle  
 const routes = [
   { path: "/", element: <Splash /> },
   { path: "/register", element: <Register /> },
   { path: "/login", element: <Login /> },
+
   { path: "/home", element: <Home /> },
+
   { path: "/lawyers", element: <Lawyers /> },
   { path: "/lawyers/create", element: <CreateLawyer /> },
+
   { path: "/articles", element: <ArticleList /> },
   { path: "/articles/:id", element: <Article /> },
+  { path: "/articles/create", element: <CreateArticle /> },
 ];
 
 // Pages that show header/footer
